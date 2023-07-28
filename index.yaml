@@ -3,10 +3,10 @@ entries:
   activemq-artemis:
   - apiVersion: v1
     appVersion: 2.17.0
-    created: "2023-07-27T17:35:12.086301-07:00"
+    created: "2023-07-27T17:39:32.008032-07:00"
     description: a multi-protocol, embeddable, very high performance, clustered, asynchronous
       messaging system.
-    digest: 09f49a4b9ee1377751a8db1a2c7b237b330d50d9d17be324a5ba7907ebb7e0d4
+    digest: ce3966df7784feae8ca3905bc5cf61c94077054fa3a99fcc0df305aa70857735
     home: https://activemq.apache.org/artemis/
     icon: https://activemq.apache.org/assets/img/activemq_logo_icon.png
     keywords:
@@ -27,4 +27,4 @@ entries:
     urls:
     - https://haydursek.github.io/activemq-artemis-helm/activemq-artemis-1.0.1.tgz
     version: 1.0.1
-generated: "2023-07-27T17:35:12.082834-07:00"
+generated: "2023-07-27T17:39:32.005986-07:00"
