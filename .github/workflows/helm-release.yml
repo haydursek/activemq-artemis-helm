@@ -7,10 +7,10 @@ name: Release Charts
 on:
   push:
     branches:
-    - master
+      - master
     paths:
-    - "stable/activemq-artemis/**"
-    - ".github/workflows/helm-release.yml"
+      - "stable/activemq-artemis/**"
+      - ".github/workflows/helm-release.yml"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,22 +21,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    
-    # https://github.com/helm/chart-releaser-action/issues/13#issuecomment-602058369
-    - name: Fetch history
-      run: git fetch --prune --unshallow
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Configure Git
-      run: |
-        git config user.name "$GITHUB_ACTOR"
-        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        
-    - name: Run chart-releaser
-      uses: helm/chart-releaser-action@v1.0.0
-      env:
-        CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      with: 
-        charts_repo_url: https://kahootali.github.io/activemq-artemis-helm/
-        charts_dir: stable
+      # https://github.com/helm/chart-releaser-action/issues/13#issuecomment-602058369
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.0.0
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          charts_repo_url: https://haydursek.github.io/activemq-artemis-helm/
+          charts_dir: stable
